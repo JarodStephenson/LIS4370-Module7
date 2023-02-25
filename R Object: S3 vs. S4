@@ -1,0 +1,20 @@
+data <- iris
+
+head(data)
+tail(data)
+list(data)
+class(data)
+summary(data)
+typeof(data)
+
+s3 <- list(Sepal.Length = 5.1, Sepal.Width = 3.5, Petal.Length = 1.4, 
+           Petal.Width = 0.2, Species = "setosa")
+s3
+isS4(s3)
+
+setClass("Flower", slots = list(Sepal.Length = "numeric", Sepal.Width = "numeric",
+          Petal.Length = "numeric", Petal.Width = "numeric", Species = "character"))
+s4 <-  new("Flower", Sepal.Length = 6.4, Sepal.Width = 2.8, Petal.Length = 5.6,
+           Petal.Width = 2.2, Species = "virginica")
+s4  
+isS4(s4)  

@@ -18,3 +18,17 @@ s4 <-  new("Flower", Sepal.Length = 6.4, Sepal.Width = 2.8, Petal.Length = 5.6,
            Petal.Width = 2.2, Species = "virginica")
 s4  
 isS4(s4)  
+
+setGeneric("calculate.mean", function(data, column) {
+  standardGeneric("calculate.mean")
+})
+
+
+setMethod("calculate.mean", "data.frame", function(data, column) {
+  mean(data[, column])
+})
+
+calculate.mean(iris, "Sepal.Length")
+calculate.mean(iris, "Sepal.Width")
+calculate.mean(iris, "Petal.Length")
+calculate.mean(iris, "Petal.Width")
